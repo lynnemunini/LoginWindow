@@ -1,13 +1,13 @@
 from tkinter import *
-from PIL import Image
+# from PIL import Image
 # Changing the resolution of our image using pillow
 # Open the image by specifying the image path.
-image_path = "bg1.png"
-image_file = Image.open(image_path)
-size = (700, 450)
-r_img = image_file.resize(size)
-# the default
-r_img.save("bg2.png", quality=25)
+# image_path = "bg1.png"
+# image_file = Image.open(image_path)
+# size = (700, 450)
+# r_img = image_file.resize(size)
+# # the default
+# r_img.save("bg2.png", quality=25)
 
 GREY = "#FFC947"
 
@@ -20,10 +20,14 @@ class Login(Tk):
         # To prevent user from resizing GUI
         self.resizable(False, False)
 
+    # def label(self):
+    #     self.backgroundImage = PhotoImage(file="bg2.png")
+    #     self.backgroundImageLabel = Label(self, image=self.backgroundImage)
+    #     self.backgroundImageLabel.place(x=0, y=0)
+
     def label(self):
-        self.backgroundImage = PhotoImage(file="bg2.png")
-        self.backgroundImageLabel = Label(self, image=self.backgroundImage)
-        self.backgroundImageLabel.place(x=0, y=0)
+        self.background = Canvas(self, bg=GREY, width=700, height=450)
+        self.background.place(x=0, y=0)
 
         self.canvas = Canvas(self, width=400, height=330, bg=GREY, highlightthickness=0)
         self.canvas.place(x=150, y=50)
